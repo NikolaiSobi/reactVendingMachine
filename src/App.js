@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import VendingMachine from './VendingMachine';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Snack1 from './Snack1';
+import Snack2 from './Snack2';
+import Snack3 from './Snack3';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<VendingMachine />}/>
+          <Route path='/snack1' element={<Snack1/>}/>
+          <Route path='/snack2' element={<Snack2/>}/>
+          <Route path='/snack3' element={<Snack3/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
